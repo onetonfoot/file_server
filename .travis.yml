@@ -1,10 +1,16 @@
 language: rust
 rust:
-  - stable
-
+- stable
 os:
-  - linux
-  - osx
-  - windows
-
+- linux
+- osx
+- windows
 cache: cargo
+deploy:
+  provider: releases
+  api_key:
+    secure: qxJNvAGHMmu0PtIEcNEy3AcVPMWpa1L0SRQXC4I7Arbvpk7bcaejUEx3IzV4xTCLshqXC7efDh+eZ2moblOKTCzoce3QDznswdkfSiLfFfBqBEAXH6FG6bJd3XUjBEdYJqEuxiWe3Vz9FK/GX/18OSmwE5qO4v/VZDfPIYswbxWjXjJf32lzoFARvsEmJckr3hxdEOt8p2Uj4w8ygVVaWg65FilhZloSPIvqwdvTIHey0z3gRmZ60HF8JbCOPlWeWFkdZQcJ4v/IDgN3iW49Uw5KuFvYiNO1c+WVADS3rjAuu3OiBy8QrVwNEq0Weq//X60H1cRnh06aRVnd9/Yf0unhzvHDqv7iPuCf6N9DYQyxBBCmASdIPSJc9T734z56xII7GFIdzr8UgK8HXwQWwaQ11DK6EzAAytchHUuNlPlH/NkkNN+6ewhjCr2JQUROBOll1FX8/8Wh9eptSVRsXZVUiRx+dJEeLwyYqhRcyPMxfu7V6uhN5gv5L2aPHt9IbKBZ0Dq3W5rRCGJsGd9AwmY+RaQyK7jjf0p6qSdojAWtSQZsd7GiOdrPcJUNrv0F9qvmLSTMrPI6aId8kVMajVcdHvUfm13x62+ybckJfBM59nurbx9Cjgw97Fx6PzWzk7FxbWW2CvSQM5q4E6QVOa8yASJaW1hZ0MRop+xNaRA=
+  file: "target/release/file_server"
+  on:
+    repo: onetonfoot/file_server
+  skip_cleanup: 'true'
