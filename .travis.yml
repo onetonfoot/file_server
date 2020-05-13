@@ -3,9 +3,11 @@ rust:
 - stable
 os:
 - linux
-- osx
-- windows
+# - osx
+# - windows
 cache: cargo
+script:
+  - cargo build --verbose --release
 deploy:
   provider: releases
   api_key:
